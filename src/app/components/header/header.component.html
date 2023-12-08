@@ -1,0 +1,42 @@
+<div class="header">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center gap-2">
+        <a class="navbar-brand" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        <a class="navbar-brand" routerLink="/contacts" routerLinkActive="active">Contacts</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="menu_drop">
+          <div class="dropdown" id="notification_bell">
+            <button class="btn bg-transparent border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="material-icons">notifications</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">John invited you</a></li>
+              <li><a class="dropdown-item" href="#">You have message from Peter</a></li>
+            </ul>
+          </div>
+
+          <form class="d-flex align-items-center" role="search">
+            <input class="form-control" *ngIf="searching" type="search" placeholder="Search" aria-label="Search">
+            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+            <mat-icon (click)="searching = !searching">search</mat-icon>
+          </form>
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{userName}}
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+          <img src="../../../assets/profile_pic.jpeg" alt="Avatar" class="avatar">
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

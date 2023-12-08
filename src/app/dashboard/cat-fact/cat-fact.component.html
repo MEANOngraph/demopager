@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Cat Fact Information :</h5>
+    </div>
+    <div class="card-body">
+        <pre>{{ factRes | json }}</pre>
+    </div>
+    <div class="card-footer text-muted">
+        <button class="btn btn-info btn-sm" (click)="getAnotherFact()">Get Another Fact</button>
+    </div>
+</div>

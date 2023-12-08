@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header bg-warning">
+        <h5 class="mb-0">Sunrise/Sunset Information</h5>
+    </div>
+    <div class="card-body">
+        <form id="sunriseForm" [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group">
+                <label for="latitude">Latitude:</label>
+                <input type="text" class="form-control" id="latitude" placeholder="Enter latitude" formControlName="latitude" required="true">
+            </div>
+            <div class="form-group">
+                <label for="longitude">Longitude:</label>
+                <input type="text" class="form-control" id="longitude" placeholder="Enter longitude" formControlName="longitude" required="true">
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput [matDatepicker]="dp" placeholder="Date:" formControlName="date">
+                    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                    <mat-datepicker #dp></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Sunrise/Sunset</button>
+        </form>
+        <div class="mt-4">
+            <strong class="mg-rt-2">Sunrise:</strong> <span id="sunrise">{{sunriseDetail?.sunrise}}</span><br>
+            <strong class="mg-rt-2">Sunset:</strong> <span id="sunset">{{sunriseDetail?.sunset}}</span>
+        </div>
+    </div>
+</div>
